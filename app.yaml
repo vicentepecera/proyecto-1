@@ -1,0 +1,19 @@
+name: mi-app
+services:
+  - name: frontend
+    source_dir: /frontend
+    github:
+      branch: main
+    build_command: npm run build
+    run_command: npm start
+    environment_slug: node-js
+    http_port: 3000
+
+  - name: backend
+    source_dir: /backend
+    github:
+      branch: main
+    build_command: dotnet publish -c Release -o out
+    run_command: dotnet out/MyBackend.dll
+    environment_slug: dotnet
+    http_port: 5000
