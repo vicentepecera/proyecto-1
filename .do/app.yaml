@@ -1,7 +1,7 @@
-name: mi-app
+name: proyecto-1
 services:
   - name: frontend
-    source_dir: /frontend
+    source_dir: /my-app
     github:
       branch: main
     build_command: npm run build
@@ -10,7 +10,7 @@ services:
     http_port: 3000
 
   - name: backend
-    source_dir: /backend
+    source_dir: /MyBackend
     github:
       branch: main
     build_command: dotnet publish -c Release -o out
